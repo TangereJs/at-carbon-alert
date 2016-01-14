@@ -1,0 +1,10 @@
+{
+  "name": "at-carbon-alert",
+  "version": "1.0.0.1",
+  "main": "at-carbon-alert.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#master",
+    "paper-button": "PolymerElements/paper-button#master",
+    "paper-dialog": "PolymerElements/paper-dialog#master"
+  }
+}

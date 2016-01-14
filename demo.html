@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="at-carbon-alert.html">
+
+</head>
+
+<body>
+  <template is="dom-bind">
+    <at-carbon-alert id="confirm" cancel-button="Cancel" confirm-button="OK" on-confirm="confirm">Do you want to continue?</at-carbon-alert>
+
+    <at-carbon-alert id="alert" title="Success">
+      Click ok to continue
+    </at-carbon-alert>
+
+    <button type="button" on-tap="openAlert">Show alert</button>
+    <button type="button" on-tap="openConfirm">Show confirm</button>
+  </template>
+
+  <script>
+    var scope = document.querySelector("template[is=dom-bind]");
+    scope.openAlert = function (e) {
+      this.$.alert.open();
+    };
+    scope.openConfirm = function (e) {
+      this.$.confirm.open();
+    };
+    scope.confirm = function (e) {
+      alert("Confirmed!");
+    };
+  </script>
+</body>
+
+</html>

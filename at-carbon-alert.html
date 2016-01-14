@@ -1,0 +1,89 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-dialog/paper-dialog.html">
+<link rel="import" href="../paper-button/paper-button.html">
+
+<!--
+`at-carbon-alert` renders a material design dialog to alert users.
+
+### Example
+
+```html
+<at-carbon-alert
+  title="Optional"
+  confirm-button="Ok"
+  cancel-button="Cancel"
+  on-confirm="onConfirm">
+    Message text
+</at-carbon-alert>
+```
+
+-->
+<dom-module id="at-carbon-alert">
+
+  <template>
+    <paper-dialog id='dialog' opened={{opened}} modal>
+      <h2 hidden=[[!title]]>[[title]]</h2>
+      <p>
+        <content></content>
+      </p>
+      <div class='buttons'>
+        <paper-button dialog-dismiss hidden=[[!cancelButton]] on-tap='close'>[[cancelButton]]</paper-button>
+        <paper-button dialog-confirm autofocus on-tap='_tapConfirm'>[[confirmButton]]</paper-button>
+      </div>
+    </paper-dialog>
+  </template>
+
+</dom-module>
+
+<script>
+  (function () {
+
+    Polymer({
+      is: 'at-carbon-alert',
+
+      properties: {
+
+        title: {
+          type: String,
+          value: null
+        },
+        confirmButton: {
+          type: String,
+          value: 'Ok'
+        },
+
+        cancelButton: String,
+
+        opened: {
+          true: Boolean,
+          notify: true
+        }
+      },
+
+      open: function () {
+        // Attach dialog to the body to ensure it is above of all existing overlays
+        Polymer.dom(document.body).appendChild(this);
+
+        // Safari workaround: wait until dialog is added to the DOM 
+        setTimeout(function () {
+          this.$.dialog.open();
+        }.bind(this), 1);
+      },
+
+      close: function () {
+        this.$.dialog.close();
+
+        // Remove from DOM
+        Polymer.dom(this.parentNode).removeChild(this);
+      },
+
+
+      _tapConfirm: function () {
+        this.close();
+
+        this.fire('confirm');
+      }
+    });
+
+  })();
+</script>
