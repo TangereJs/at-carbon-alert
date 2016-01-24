@@ -23,9 +23,9 @@
   <template>
     <paper-dialog id='dialog' opened={{opened}} modal>
       <h2 hidden=[[!title]]>[[title]]</h2>
-      <p>
+      <div>
         <content></content>
-      </p>
+      </div>
       <div class='buttons'>
         <paper-button dialog-dismiss hidden=[[!cancelButton]] on-tap='close'>[[cancelButton]]</paper-button>
         <paper-button dialog-confirm autofocus on-tap='_tapConfirm'>[[confirmButton]]</paper-button>
