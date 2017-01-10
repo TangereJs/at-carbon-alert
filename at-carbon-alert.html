@@ -1,4 +1,4 @@
-<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../tangere/tangere.html">
 <link rel="import" href="../paper-dialog/paper-dialog.html">
 <link rel="import" href="../paper-button/paper-button.html">
 
@@ -64,7 +64,7 @@
         // Attach dialog to the body to ensure it is above of all existing overlays
         Polymer.dom(document.body).appendChild(this);
 
-        // Safari workaround: wait until dialog is added to the DOM 
+        // Safari workaround: wait until dialog is added to the DOM
         setTimeout(function () {
           this.$.dialog.open();
         }.bind(this), 1);
