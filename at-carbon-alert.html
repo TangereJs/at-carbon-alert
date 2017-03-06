@@ -24,6 +24,7 @@
     <paper-dialog id='dialog' opened={{opened}} modal>
       <h2 hidden=[[!title]]>[[title]]</h2>
       <div>
+        [[message]]
         <content></content>
       </div>
       <div class='buttons'>
@@ -44,6 +45,10 @@
       properties: {
 
         title: {
+          type: String,
+          value: null
+        },
+        message: {
           type: String,
           value: null
         },

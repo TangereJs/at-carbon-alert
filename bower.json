@@ -1,11 +1,12 @@
 {
   "name": "at-carbon-alert",
-  "version": "1.0.0.1",
+  "version": "1.0.0.4",
   "main": "at-carbon-alert.html",
   "dependencies": {
     "tangere": "TangereJs/tangere#master",
     "paper-button": "PolymerElements/paper-button#master",
     "paper-dialog": "PolymerElements/paper-dialog#master",
     "at-doc-viewer": "TangereJs/at-doc-viewer#master"
-  }
+  },
+  "private": true
 }
