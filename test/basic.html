@@ -1,0 +1,1119 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>at-carbon-alert tests</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+  <link rel="import" href="../at-carbon-alert.html">
+  <link rel="import" href="../../iron-test-helpers/iron-test-helpers.html" />
+  </head>
+  <body>
+    <test-fixture id="initial">
+      <template>
+        <at-carbon-alert></at-carbon-alert>
+      </template>
+    </test-fixture>
+
+    <!-- 
+      title fixtures 
+    -->
+    <test-fixture id="titleIsUndefined">
+      <template>
+        <at-carbon-alert title="undefined"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="titleIsNull">
+      <template>
+        <at-carbon-alert title="null"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="titleIsTrue">
+      <template>
+        <at-carbon-alert title="true"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="titleIsFalse">
+      <template>
+        <at-carbon-alert title="false"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="titleIs-42">
+      <template>
+        <at-carbon-alert title="-42"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="titleIs0">
+      <template>
+        <at-carbon-alert title="0"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="titleIs42">
+      <template>
+        <at-carbon-alert title="42"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="titleIsEmpty">
+      <template>
+        <at-carbon-alert title=""></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="titleIsLorem_ipsum">
+      <template>
+        <at-carbon-alert title="lorem ipsum"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="titleIs{}">
+      <template>
+        <at-carbon-alert title="{}"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="titleIs[]">
+      <template>
+        <at-carbon-alert title="[]"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="titleIsFunction">
+      <template>
+        <at-carbon-alert title="function f() { return undefined; }"></at-carbon-alert>
+      </template>
+    </test-fixture>
+
+    <!-- 
+      message fixtures 
+    -->
+    <test-fixture id="messageIsUndefined">
+      <template>
+        <at-carbon-alert message="undefined"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="messageIsNull">
+      <template>
+        <at-carbon-alert message="null"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="messageIsTrue">
+      <template>
+        <at-carbon-alert message="true"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="messageIsFalse">
+      <template>
+        <at-carbon-alert message="false"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="messageIs-42">
+      <template>
+        <at-carbon-alert message="-42"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="messageIs0">
+      <template>
+        <at-carbon-alert message="0"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="messageIs42">
+      <template>
+        <at-carbon-alert message="42"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="messageIsEmpty">
+      <template>
+        <at-carbon-alert message=""></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="messageIsLorem_ipsum">
+      <template>
+        <at-carbon-alert message="lorem ipsum"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="messageIs{}">
+      <template>
+        <at-carbon-alert message="{}"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="messageIs[]">
+      <template>
+        <at-carbon-alert message="[]"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="messageIsFunction">
+      <template>
+        <at-carbon-alert message="function f() { return undefined; }"></at-carbon-alert>
+      </template>
+    </test-fixture>
+
+    <!-- 
+      confirmButton fixtures 
+    -->
+    <test-fixture id="confirmButtonIsUndefined">
+      <template>
+        <at-carbon-alert confirm-button="undefined"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="confirmButtonIsNull">
+      <template>
+        <at-carbon-alert confirm-button="null"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="confirmButtonIsTrue">
+      <template>
+        <at-carbon-alert confirm-button="true"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="confirmButtonIsFalse">
+      <template>
+        <at-carbon-alert confirm-button="false"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="confirmButtonIs-42">
+      <template>
+        <at-carbon-alert confirm-button="-42"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="confirmButtonIs0">
+      <template>
+        <at-carbon-alert confirm-button="0"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="confirmButtonIs42">
+      <template>
+        <at-carbon-alert confirm-button="42"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="confirmButtonIsEmpty">
+      <template>
+        <at-carbon-alert confirm-button=""></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="confirmButtonIsLorem_ipsum">
+      <template>
+        <at-carbon-alert confirm-button="lorem ipsum"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="confirmButtonIs{}">
+      <template>
+        <at-carbon-alert confirm-button="{}"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="confirmButtonIs[]">
+      <template>
+        <at-carbon-alert confirm-button="[]"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="confirmButtonIsFunction">
+      <template>
+        <at-carbon-alert confirm-button="function f() { return undefined; }"></at-carbon-alert>
+      </template>
+    </test-fixture>
+
+    <!-- 
+      cancelButton fixtures 
+    -->
+    <test-fixture id="cancelButtonIsUndefined">
+      <template>
+        <at-carbon-alert cancel-button="undefined"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="cancelButtonIsNull">
+      <template>
+        <at-carbon-alert cancel-button="null"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="cancelButtonIsTrue">
+      <template>
+        <at-carbon-alert cancel-button="true"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="cancelButtonIsFalse">
+      <template>
+        <at-carbon-alert cancel-button="false"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="cancelButtonIs-42">
+      <template>
+        <at-carbon-alert cancel-button="-42"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="cancelButtonIs0">
+      <template>
+        <at-carbon-alert cancel-button="0"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="cancelButtonIs42">
+      <template>
+        <at-carbon-alert cancel-button="42"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="cancelButtonIsEmpty">
+      <template>
+        <at-carbon-alert cancel-button=""></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="cancelButtonIsLorem_ipsum">
+      <template>
+        <at-carbon-alert cancel-button="lorem ipsum"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="cancelButtonIs{}">
+      <template>
+        <at-carbon-alert cancel-button="{}"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="cancelButtonIs[]">
+      <template>
+        <at-carbon-alert cancel-button="[]"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="cancelButtonIsFunction">
+      <template>
+        <at-carbon-alert cancel-button="function f() { return undefined; }"></at-carbon-alert>
+      </template>
+    </test-fixture>
+
+    <!-- 
+      opened fixtures 
+    -->
+    <test-fixture id="openedIsUndefined">
+      <template>
+        <at-carbon-alert opened="undefined"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="openedIsNull">
+      <template>
+        <at-carbon-alert opened="null"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="openedIsTrue">
+      <template>
+        <at-carbon-alert opened="true"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="openedIsFalse">
+      <template>
+        <at-carbon-alert opened="false"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="openedIs-42">
+      <template>
+        <at-carbon-alert opened="-42"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="openedIs0">
+      <template>
+        <at-carbon-alert opened="0"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="openedIs42">
+      <template>
+        <at-carbon-alert opened="42"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="openedIsEmpty">
+      <template>
+        <at-carbon-alert opened=""></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="openedIsLorem_ipsum">
+      <template>
+        <at-carbon-alert opened="lorem ipsum"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="openedIs{}">
+      <template>
+        <at-carbon-alert opened="{}"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="openedIs[]">
+      <template>
+        <at-carbon-alert opened="[]"></at-carbon-alert>
+      </template>
+    </test-fixture>
+    <test-fixture id="openedIsFunction">
+      <template>
+        <at-carbon-alert opened="function f() { return undefined; }"></at-carbon-alert>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="propertyTests">
+      <template>
+        <at-carbon-alert></at-carbon-alert>
+      </template>
+    </test-fixture>
+    
+  <script>
+    suite('initial value tests', function() {
+      test('initial value', function() {
+        var elt = fixture('initial');
+
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+    });
+
+    // 
+    // title attribute tests
+    // 
+    suite("title attribute tests", function() {
+      test('title is undefined', function() {
+        var elt = fixture('titleIsUndefined');
+
+        assert.equal(elt.title, "undefined");
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('title is null', function() {
+        var elt = fixture('titleIsNull');
+
+        assert.equal(elt.title, "null");
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('title is true', function() {
+        var elt = fixture('titleIsTrue');
+
+        assert.equal(elt.title, "true");
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('title is false', function() {
+        var elt = fixture('titleIsFalse');
+
+        assert.equal(elt.title, "false");
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('title is -42', function() {
+        var elt = fixture('titleIs-42');
+
+        assert.equal(elt.title, "-42");
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('title is 0', function() {
+        var elt = fixture('titleIs0');
+
+        assert.equal(elt.title, "0");
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('title is 42', function() {
+        var elt = fixture('titleIs42');
+
+        assert.equal(elt.title, "42");
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('title is empty', function() {
+        var elt = fixture('titleIsEmpty');
+
+        assert.equal(elt.title, "");
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('title is lorem ipsum', function() {
+        var elt = fixture('titleIsLorem_ipsum');
+
+        assert.equal(elt.title, "lorem ipsum");
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('title is {}', function() {
+        var elt = fixture('titleIs{}');
+
+        assert.equal(elt.title, "{}");
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('title is []', function() {
+        var elt = fixture('titleIs[]');
+
+        assert.equal(elt.title, "[]");
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('title is function', function() {
+        var elt = fixture('titleIsFunction');
+
+        assert.equal(elt.title, "function f() { return undefined; }");
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+    });
+
+    // 
+    // message attribute tests
+    // 
+    suite("message attribute tests", function() {
+      test('message is undefined', function() {
+        var elt = fixture('messageIsUndefined');
+
+        assert.equal(elt.message, "undefined");
+        assert.equal(elt.title, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('message is null', function() {
+        var elt = fixture('messageIsNull');
+
+        assert.equal(elt.message, "null");
+        assert.equal(elt.title, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('message is true', function() {
+        var elt = fixture('messageIsTrue');
+
+        assert.equal(elt.message, "true");
+        assert.equal(elt.title, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('message is false', function() {
+        var elt = fixture('messageIsFalse');
+
+        assert.equal(elt.message, "false");
+        assert.equal(elt.title, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('message is -42', function() {
+        var elt = fixture('messageIs-42');
+
+        assert.equal(elt.message, "-42");
+        assert.equal(elt.title, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('message is 0', function() {
+        var elt = fixture('messageIs0');
+
+        assert.equal(elt.message, "0");
+        assert.equal(elt.title, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('message is 42', function() {
+        var elt = fixture('messageIs42');
+
+        assert.equal(elt.message, "42");
+        assert.equal(elt.title, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('message is empty', function() {
+        var elt = fixture('messageIsEmpty');
+
+        assert.equal(elt.title, null);
+        assert.equal(elt.title, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('message is lorem ipsum', function() {
+        var elt = fixture('messageIsLorem_ipsum');
+
+        assert.equal(elt.message, "lorem ipsum");
+        assert.equal(elt.title, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('message is {}', function() {
+        var elt = fixture('messageIs{}');
+
+        assert.equal(elt.message, "{}");
+        assert.equal(elt.title, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('message is []', function() {
+        var elt = fixture('messageIs[]');
+
+        assert.equal(elt.message, "[]");
+        assert.equal(elt.title, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('message is function', function() {
+        var elt = fixture('messageIsFunction');
+
+        assert.equal(elt.message, "function f() { return undefined; }");
+        assert.equal(elt.title, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+    });
+
+
+    // 
+    // confirmButton attribute tests
+    // 
+    suite("confirmButton attribute tests", function() {
+      test('confirmButton is undefined', function() {
+        var elt = fixture('confirmButtonIsUndefined');
+
+        assert.equal(elt.confirmButton, "undefined");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('confirmButton is null', function() {
+        var elt = fixture('confirmButtonIsNull');
+
+        assert.equal(elt.confirmButton, "null");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('confirmButton is true', function() {
+        var elt = fixture('confirmButtonIsTrue');
+
+        assert.equal(elt.confirmButton, "true");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('confirmButton is false', function() {
+        var elt = fixture('confirmButtonIsFalse');
+
+        assert.equal(elt.confirmButton, "false");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('confirmButton is -42', function() {
+        var elt = fixture('confirmButtonIs-42');
+
+        assert.equal(elt.confirmButton, "-42");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('confirmButton is 0', function() {
+        var elt = fixture('confirmButtonIs0');
+
+        assert.equal(elt.confirmButton, "0");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('confirmButton is 42', function() {
+        var elt = fixture('confirmButtonIs42');
+
+        assert.equal(elt.confirmButton, "42");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('confirmButton is empty', function() {
+        var elt = fixture('confirmButtonIsEmpty');
+
+        assert.equal(elt.title, null);
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('confirmButton is lorem ipsum', function() {
+        var elt = fixture('confirmButtonIsLorem_ipsum');
+
+        assert.equal(elt.confirmButton, "lorem ipsum");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('confirmButton is {}', function() {
+        var elt = fixture('confirmButtonIs{}');
+
+        assert.equal(elt.confirmButton, "{}");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('confirmButton is []', function() {
+        var elt = fixture('confirmButtonIs[]');
+
+        assert.equal(elt.confirmButton, "[]");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+
+      test('confirmButton is function', function() {
+        var elt = fixture('confirmButtonIsFunction');
+
+        assert.equal(elt.confirmButton, "function f() { return undefined; }");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, false);
+      });
+    });
+
+    // 
+    // cancelButton attribute tests
+    // 
+    suite("cancelButton attribute tests", function() {
+      test('cancelButton is undefined', function() {
+        var elt = fixture('cancelButtonIsUndefined');
+
+        assert.equal(elt.cancelButton, "undefined");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.opened, false);
+      });
+
+      test('cancelButton is null', function() {
+        var elt = fixture('cancelButtonIsNull');
+
+        assert.equal(elt.cancelButton, "null");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.opened, false);
+      });
+
+      test('cancelButton is true', function() {
+        var elt = fixture('cancelButtonIsTrue');
+
+        assert.equal(elt.cancelButton, "true");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.opened, false);
+      });
+
+      test('cancelButton is false', function() {
+        var elt = fixture('cancelButtonIsFalse');
+
+        assert.equal(elt.cancelButton, "false");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.opened, false);
+      });
+
+      test('cancelButton is -42', function() {
+        var elt = fixture('cancelButtonIs-42');
+
+        assert.equal(elt.cancelButton, "-42");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.opened, false);
+      });
+
+      test('cancelButton is 0', function() {
+        var elt = fixture('cancelButtonIs0');
+
+        assert.equal(elt.cancelButton, "0");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.opened, false);
+      });
+
+      test('cancelButton is 42', function() {
+        var elt = fixture('cancelButtonIs42');
+
+        assert.equal(elt.cancelButton, "42");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.opened, false);
+      });
+
+      test('cancelButton is empty', function() {
+        var elt = fixture('cancelButtonIsEmpty');
+
+        assert.equal(elt.title, null);
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.opened, false);
+      });
+
+      test('cancelButton is lorem ipsum', function() {
+        var elt = fixture('cancelButtonIsLorem_ipsum');
+
+        assert.equal(elt.cancelButton, "lorem ipsum");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.opened, false);
+      });
+
+      test('cancelButton is {}', function() {
+        var elt = fixture('cancelButtonIs{}');
+
+        assert.equal(elt.cancelButton, "{}");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.opened, false);
+      });
+
+      test('cancelButton is []', function() {
+        var elt = fixture('cancelButtonIs[]');
+
+        assert.equal(elt.cancelButton, "[]");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.opened, false);
+      });
+
+      test('cancelButton is function', function() {
+        var elt = fixture('cancelButtonIsFunction');
+
+        assert.equal(elt.cancelButton, "function f() { return undefined; }");
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.opened, false);
+      });
+    });
+
+    // 
+    // opened attribute tests
+    // 
+    suite("opened attribute tests", function() {
+      test('opened is undefined', function() {
+        var elt = fixture('openedIsUndefined');
+
+        assert.equal(elt.opened, true);
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+      });
+
+      test('opened is null', function() {
+        var elt = fixture('openedIsNull');
+
+        assert.equal(elt.opened, true);
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+      });
+
+      test('opened is true', function() {
+        var elt = fixture('openedIsTrue');
+
+        assert.equal(elt.opened, true);
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+      });
+
+      test('opened is false', function() {
+        var elt = fixture('openedIsFalse');
+
+        assert.equal(elt.opened, true);
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+      });
+
+      test('opened is -42', function() {
+        var elt = fixture('openedIs-42');
+
+        assert.equal(elt.opened, true);
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+      });
+
+      test('opened is 0', function() {
+        var elt = fixture('openedIs0');
+
+        assert.equal(elt.opened, true);
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+      });
+
+      test('opened is 42', function() {
+        var elt = fixture('openedIs42');
+
+        assert.equal(elt.opened, true);
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+      });
+
+      test('opened is empty', function() {
+        var elt = fixture('openedIsEmpty');
+
+        assert.equal(elt.opened, true);
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+      });
+
+      test('opened is lorem ipsum', function() {
+        var elt = fixture('openedIsLorem_ipsum');
+
+        assert.equal(elt.opened, true);
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+      });
+
+      test('opened is {}', function() {
+        var elt = fixture('openedIs{}');
+
+        assert.equal(elt.opened, true);
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+      });
+
+      test('opened is []', function() {
+        var elt = fixture('openedIs[]');
+
+        assert.equal(elt.opened, true);
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+      });
+
+      test('opened is function', function() {
+        var elt = fixture('openedIsFunction');
+
+        assert.equal(elt.title, null);
+        assert.equal(elt.message, null);
+        assert.equal(elt.confirmButton, "Ok");
+        assert.equal(elt.cancelButton, "");
+        assert.equal(elt.opened, true);
+      });
+    });
+
+    suite("tests where properties are set as in code", function() { 
+
+      test('invalid title values', function() {
+        var elt = fixture('propertyTests');
+
+        var actValues = [ 
+          "undefined", "null", "true", "false", "-42", "0", "42", "", "lorem ipsum", "{}", "[]", "function f() { return undefined; }", 
+          undefined, null, true, false, -42, 0, 42, {}, []
+          ];
+
+        var expValues = [ 
+          "undefined", "null", "true", "false", "-42", "0", "42", "", "lorem ipsum", "{}", "[]", "function f() { return undefined; }",
+          undefined, null, true, false, -42, 0, 42, {}, []
+         ];
+
+        for (var i=0; i < actValues.length; i++) { 
+          var actValue = actValues[i];
+          var expValue = expValues[i];
+
+          elt.title = actValue;
+          assert.deepEqual(elt.title, expValue);
+          assert.deepEqual(elt.message, null);
+          assert.deepEqual(elt.confirmButton, "Ok");
+          assert.deepEqual(elt.cancelButton, "");
+          assert.deepEqual(elt.opened, false);
+        }
+      });
+
+      test('invalid message values', function() {
+        var elt = fixture('propertyTests');
+
+        var actValues = [ 
+          "undefined", "null", "true", "false", "-42", "0", "42", "", "lorem ipsum", "{}", "[]", "function f() { return undefined; }", 
+          undefined, null, true, false, -42, 0, 42, {}, []
+          ];
+
+        var expValues = [ 
+          "undefined", "null", "true", "false", "-42", "0", "42", "", "lorem ipsum", "{}", "[]", "function f() { return undefined; }",
+          undefined, null, true, false, -42, 0, 42, {}, []
+         ];
+
+        for (var i=0; i < actValues.length; i++) { 
+          var actValue = actValues[i];
+          var expValue = expValues[i];
+
+          elt.message = actValue;
+          assert.deepEqual(elt.title, null);
+          assert.deepEqual(elt.message, expValue);
+          assert.deepEqual(elt.confirmButton, "Ok");
+          assert.deepEqual(elt.cancelButton, "");
+          assert.deepEqual(elt.opened, false);
+        }
+      });
+
+      test('invalid confirmButton values', function() {
+        var elt = fixture('propertyTests');
+
+        var actValues = [ 
+          "undefined", "null", "true", "false", "-42", "0", "42", "", "lorem ipsum", "{}", "[]", "function f() { return undefined; }", 
+          undefined, null, true, false, -42, 0, 42, {}, []
+          ];
+
+        var expValues = [ 
+          "undefined", "null", "true", "false", "-42", "0", "42", "", "lorem ipsum", "{}", "[]", "function f() { return undefined; }",
+          undefined, null, true, false, -42, 0, 42, {}, []
+         ];
+
+        for (var i=0; i < actValues.length; i++) { 
+          var actValue = actValues[i];
+          var expValue = expValues[i];
+
+          elt.confirmButton = actValue;
+          assert.deepEqual(elt.title, null);
+          assert.deepEqual(elt.message, null);
+          assert.deepEqual(elt.confirmButton, expValue);
+          assert.deepEqual(elt.cancelButton, "");
+          assert.deepEqual(elt.opened, false);
+        }
+      });
+
+      test('invalid cancelButton values', function() {
+        var elt = fixture('propertyTests');
+
+        var actValues = [ 
+          "undefined", "null", "true", "false", "-42", "0", "42", "", "lorem ipsum", "{}", "[]", "function f() { return undefined; }", 
+          undefined, null, true, false, -42, 0, 42, {}, []
+          ];
+
+        var expValues = [ 
+          "undefined", "null", "true", "false", "-42", "0", "42", "", "lorem ipsum", "{}", "[]", "function f() { return undefined; }",
+          undefined, null, true, false, -42, 0, 42, {}, []
+         ];
+
+        for (var i=0; i < actValues.length; i++) { 
+          var actValue = actValues[i];
+          var expValue = expValues[i];
+
+          elt.cancelButton = actValue;
+          assert.deepEqual(elt.title, null);
+          assert.deepEqual(elt.message, null);
+          assert.deepEqual(elt.confirmButton, "Ok");
+          assert.deepEqual(elt.cancelButton, expValue);
+          assert.deepEqual(elt.opened, false);
+        }
+      });
+
+      test('invalid opened values', function() {
+        var elt = fixture('propertyTests');
+
+        var actValues = [ 
+          "undefined", "null", "true", "false", "-42", "0", "42", "", "lorem ipsum", "{}", "[]", "function f() { return undefined; }", 
+          undefined, null, true, false, -42, 0, 42, {}, []
+          ];
+
+        var expValues = [ 
+          "undefined", "null", "true", "false", "-42", "0", "42", "", "lorem ipsum", "{}", "[]", "function f() { return undefined; }",
+          undefined, null, true, false, -42, 0, 42, {}, []
+         ];
+
+        for (var i=0; i < actValues.length; i++) { 
+          var actValue = actValues[i];
+          var expValue = expValues[i];
+
+          elt.opened = actValue;
+          assert.deepEqual(elt.title, null);
+          assert.deepEqual(elt.message, null);
+          assert.deepEqual(elt.confirmButton, "Ok");
+          assert.deepEqual(elt.cancelButton, "");
+          assert.deepEqual(elt.opened, expValue);
+        }
+      });
+
+    });
+  </script>
+  </body>
+</html>
