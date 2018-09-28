@@ -4,8 +4,8 @@
   "main": "at-carbon-alert.html",
   "dependencies": {
     "tangere": "TangereJs/tangere#master",
-    "paper-button": "PolymerElements/paper-button#master",
-    "paper-dialog": "PolymerElements/paper-dialog#master",
+    "paper-button": "PolymerElements/paper-button#^2.0.0",
+    "paper-dialog": "PolymerElements/paper-dialog#^2.0.0",
     "at-doc-viewer": "TangereJs/at-doc-viewer#master"
   },
   "private": true
