@@ -7,28 +7,32 @@
 </head>
 
 <body>
-  <template is="dom-bind">
-    <at-carbon-alert id="confirm" cancel-button="Cancel" confirm-button="OK" on-confirm="confirm">Do you want to continue?</at-carbon-alert>
+  <at-carbon-alert id="confirm" cancel-button="Cancel" confirm-button="OK">Do you want to continue?</at-carbon-alert>
+      
+  <at-carbon-alert id="alert" title="Success">
+    Click ok to continue
+  </at-carbon-alert>
 
-    <at-carbon-alert id="alert" title="Success">
-      Click ok to continue
-    </at-carbon-alert>
-
-    <button type="button" on-tap="openAlert">Show alert</button>
-    <button type="button" on-tap="openConfirm">Show confirm</button>
-  </template>
-
+  <button id="openAlertButton" type="button">Show alert</button>
+  <button id="showConfirmButton" type="button">Show confirm</button>
+  
   <script>
-    var scope = document.querySelector("template[is=dom-bind]");
-    scope.openAlert = function (e) {
-      this.$.alert.open();
-    };
-    scope.openConfirm = function (e) {
-      this.$.confirm.open();
-    };
-    scope.confirm = function (e) {
-      alert("Confirmed!");
-    };
+      var open = document.getElementById('openAlertButton');
+      var show = document.getElementById('showConfirmButton');
+      var confirm = document.getElementById('confirm');
+      var carbonAlert = document.getElementById('alert');
+
+      open.addEventListener('tap', function(){
+        carbonAlert.open();
+      });
+
+      show.addEventListener('tap', function(){
+        confirm.open();
+      });
+
+      confirm.addEventListener('confirm', function() {
+          alert("Confirmed!");
+      });
   </script>
 </body>
 
