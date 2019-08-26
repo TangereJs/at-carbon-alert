@@ -23,9 +23,11 @@
   <template>
     <paper-dialog id='dialog' opened={{opened}} modal>
       <h2 hidden=[[!title]]>[[title]]</h2>
-      <div>
+      <div hidden$="{{_computeHiddenMessage(message)}}">
         [[message]]
         <content></content>
+      </div>
+      <div id="rawHtml" hidden$="{{_computeHiddenRawHtml(rawHtml)}}">
       </div>
       <div class='buttons'>
         <paper-button dialog-dismiss hidden=[[!cancelButton]] on-tap='close'>[[cancelButton]]</paper-button>
@@ -66,7 +68,15 @@
           type: Boolean,
           value: false,
           notify: true
-        }
+        },
+
+        rawHtml: {
+          type: String,
+          value: '',
+          xtype: 'code',
+          mode: "htmlmixed",
+          observer: "_rawHtmlChanged"
+        },
       },
 
       open: function () {
@@ -86,12 +96,26 @@
         Polymer.dom(this.parentNode).removeChild(this);
       },
 
-
       _tapConfirm: function () {
         this.close();
 
         this.fire('confirm');
+      },
+
+      _computeHiddenMessage: function(message) {
+        return message != null ? false : true;
+      },
+
+      _computeHiddenRawHtml: function(rawHtml) {
+        return rawHtml != '' ? false : true;
+      },
+
+      _rawHtmlChanged: function(newValue, oldValue) {
+        if(newValue != undefined) {
+          this.$.rawHtml.innerHTML = newValue;
+        }
       }
+
     });
 
   })();
