@@ -1,5 +1,5 @@
 <link rel="import" href="../tangere/tangere.html">
-<link rel="import" href="../paper-dialog/paper-dialog.html">
+<link rel="import" href="at-carbon-dialog.html">
 <link rel="import" href="../paper-button/paper-button.html">
 
 <!--
@@ -21,7 +21,7 @@
 <dom-module id="at-carbon-alert">
 
   <template>
-    <paper-dialog id='dialog' opened={{opened}} modal>
+    <at-carbon-dialog id='dialog' opened={{opened}} modal>
       <h2 hidden=[[!title]]>[[title]]</h2>
       <div hidden$="{{_computeHiddenMessage(message)}}">
         [[message]]
@@ -33,7 +33,7 @@
         <paper-button dialog-dismiss hidden=[[!cancelButton]] on-tap='close'>[[cancelButton]]</paper-button>
         <paper-button dialog-confirm autofocus on-tap='_tapConfirm'>[[confirmButton]]</paper-button>
       </div>
-    </paper-dialog>
+    </at-carbon-dialog>
   </template>
 
 </dom-module>
@@ -67,7 +67,8 @@
         opened: {
           type: Boolean,
           value: false,
-          notify: true
+          notify: true,
+          observer: "_openedChanged"
         },
 
         rawHtml: {
@@ -113,6 +114,20 @@
       _rawHtmlChanged: function(newValue, oldValue) {
         if(newValue != undefined) {
           this.$.rawHtml.innerHTML = newValue;
+        }
+      },
+
+      _openedChanged: function(newValue, oldValue) {
+        if(oldValue == undefined) {
+          return;
+        }
+
+        if(newValue == true) {
+          this.$.dialog.style.zIndex = Tangere.layerOpen() -1;
+        }
+
+        if(newValue == false) {
+          Tangere.layerClose();
         }
       }
 
