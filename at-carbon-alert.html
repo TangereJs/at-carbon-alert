@@ -67,8 +67,7 @@
         opened: {
           type: Boolean,
           value: false,
-          notify: true,
-          observer: "_openedChanged"
+          notify: true
         },
 
         rawHtml: {
@@ -116,20 +115,6 @@
           this.$.rawHtml.innerHTML = newValue;
         }
       },
-
-      _openedChanged: function(newValue, oldValue) {
-        if(oldValue == undefined) {
-          return;
-        }
-
-        if(newValue == true) {
-          this.$.dialog.style.zIndex = Tangere.layerOpen();
-        }
-
-        if(newValue == false) {
-          Tangere.layerClose();
-        }
-      }
 
     });
 
